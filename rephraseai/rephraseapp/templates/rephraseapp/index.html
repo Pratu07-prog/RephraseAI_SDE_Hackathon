@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Video Resume</title>
+</head>
+<body>
+	<h1>Video Resume</h1>
+	<p>Enter your resume text below to receive the your video resume:</p>
+
+	<form method = "post">
+
+        <label for="resume_content"></label>
+        <input type="text" name="resume_content" placeholder="Enter your resume content Here..." class="form-control">
+		<input type="submit" value="Create">
+
+	</form>
+<br><br>
+
+    <p>Your campaign_id is this : {{campaign_id}}</p>
+    <p>Copy this and paste to download your resume.</p>
+
+    <form method = "post">
+
+
+        <label for="status"></label>
+        <input type="text" name="status" placeholder="Enter your campaign id Here..." class="form-control">
+		<input type="submit" value="Check Status">
+
+	</form>
+
+    <br>
+    <br>
+    <p> Status : {{status}}</p>
+    {%if video_url %}
+    <p>Download the video resume for given campaign_id here</p>
+    <br>
+    <a href={{video_url}}>Download Here</a>
+    {% endif %}
+</body>
+</html>
